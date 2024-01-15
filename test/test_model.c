@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <assert.h>
+
+#include "../src/socket_helper.h"
 
 int main(void) {
-	exit(48);
+	open_serverfd("");
 	printf("FUCK YOU!\n");
 	return 0;
 }

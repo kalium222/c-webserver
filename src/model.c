@@ -2,6 +2,7 @@
 #include "socket_helper.h"
 
 #include <netdb.h>
+#include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
@@ -31,13 +32,25 @@ int server(char *port) {
 	char client_hostname[MAXLINE], client_port[MAXLINE];
 
 	listenfd = open_serverfd(port);
+	if (listenfd==-1) {
+		fprintf(stderr, "error open server fd\n");
+		exit(1);
+	}
+	
 	/*while (1) {*/
 		clientlen = sizeof(struct sockaddr_storage);
+		printf("Waiting for connect...\n");
 		connfd = accept(listenfd, (struct sockaddr*)&clientaddr, &clientlen);
+		if (connfd==-1) {
+			fprintf(stderr, "error accept\n");
+			exit(1);
+		}
 		getnameinfo((struct sockaddr*) &clientaddr, clientlen,
-			   	client_hostname, MAXLINE, client_port, MAXLINE, 0);
+				client_hostname, MAXLINE, client_port, MAXLINE, 0);
 		printf("Connected to (%s, %s)\n", client_hostname, client_port);
 		echo(connfd);
+		
+		printf("Disconnected.\n");
 		close(connfd);
 	/*}*/
 	return 0;

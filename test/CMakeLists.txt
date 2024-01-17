@@ -1,4 +1,5 @@
 #/test
+# You can run `ctest --verbose --output-on-failure` to check the output in the terminal
 
 add_executable(test_helper test_helper.c ${SOURCE_FILES})
 add_executable(test_model test_model.c ${SOURCE_FILES})

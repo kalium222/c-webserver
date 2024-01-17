@@ -5,6 +5,8 @@ set(SOURCE_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/model.h
 	${CMAKE_CURRENT_SOURCE_DIR}/socket_helper.c
 	${CMAKE_CURRENT_SOURCE_DIR}/socket_helper.h
+	${CMAKE_CURRENT_SOURCE_DIR}/http_handler.h
+	${CMAKE_CURRENT_SOURCE_DIR}/http_handler.c
 	)
 
 set(SOURCE_FILES ${SOURCE_FILES} PARENT_SCOPE)

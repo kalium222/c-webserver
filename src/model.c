@@ -9,6 +9,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+// To write whatever read from fd
 void echo(int fd);
 
 int client(char *host, char *port) {

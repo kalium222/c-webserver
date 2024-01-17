@@ -1,11 +1,12 @@
-#include <stdio.h>
-#include <assert.h>
+#include "../src/model.h"
 
-#include "../src/socket_helper.h"
+#define PORT "11111"
 
+// how to test it?
+// just use the browser
+// test the basic funtionality
 int main(void) {
-	open_serverfd("");
-	printf("FUCK YOU!\n");
+	server(PORT);
 	return 0;
 }
 

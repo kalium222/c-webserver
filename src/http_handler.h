@@ -2,9 +2,6 @@
 
 #define ERROR_TITLE "<html><title>Tiny Error</title>"
 
-// handle the http request on fd socket
-void doit(int fd);
-
 // write error to fd socket according to the 
 // following things
 void clienterror(int fd, char *cause, char* errnum, char* shortmsg, char* longmsg);

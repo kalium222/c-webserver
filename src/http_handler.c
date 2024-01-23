@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 void clienterror(int fd, char *cause, char *errnum, char *shortmsg, char *longmsg) {
-	char buf[MAXLINE], body[MAXLINE];
+	char buf[MAXLINE], body[MAXLINE*MAXLINE*MAXLINE];
 
 	sprintf(body, ERROR_TITLE);
 	sprintf(body, "%s<body bgcolor=""ffffff"">\r\n", body);

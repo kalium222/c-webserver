@@ -53,3 +53,11 @@ void doit(int fd) {
 	return;
 }
 
+void serve_static(int fd, char *filename, int filesize) {
+	// TODO:
+}
+
+void serve_dynamic(int fd, char *filename, char *cgiargs) {
+	// TODO:
+}
+
